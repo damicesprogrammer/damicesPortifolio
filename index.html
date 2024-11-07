@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Portifólio || Augusto D' Amices</title>
+</head>
+<body>
+    <nav class="side-bar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-computer"></i>D' Amices </a>
+
+        <ul class="nav-links">
+            <li><a href="#about" data-slide="0" class="">Sobre mim</a></li>
+            <li><a href="#experience" data-slide="1">Habilidades</a></li>
+            <li><a href="#projects" data-slide="2">Projetos</a></li>
+            <li><a href="#contact" data-slide="3">Contato</a></li>
+        </ul>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+        <button class="btn-gitHub">Visite meu GitHub <i class="fa-brands fa-github"></i></button>
+    </nav>
+
+    <div class="sideContent">
+        <div class="swiper mySwiper wrapper-slide">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide about" id="about">
+                <div class="container">
+                    <div class="image-container">
+                        <img src="assets/img/perfil.jpg" alt="">
+                    </div>
+                    <div class="text-container">
+                        <h2>Olá, eu me chamo</h2>
+                        <h1>Augusto D' Amices</h1>
+                        <span>Desenvolvedor Fullstack</span>
+                        <p>Me conheço como uma pessoa que gosta de resolver problemas, de forma organizada e otimizada.</p>
+                        <p>Apaixonado pela minha profissão desde Fevereiro de 2023, começei trabalhando com infraestrutura de redes, e depois, migrei para área de programação como Front-End.</p>
+                        <div class="buttons">
+                            <div class="btns-social">
+                                <a href="https://github.com/damicesprogrammer" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://linkedin.com/in/augustodamices" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                            <div class="cv">
+                                <a href="#">Curriculum Vitae <i class="fa-solid fa-file-arrow-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="swiper-slide " id="experience">
+                    <div class="card-box">
+                        <div class="card">
+                            <div class="img-content">
+                                <img src="assets/img/html-css-js.png" alt="html-css-js-logo">
+                            </div>
+                            <div class="text-content">
+                                <h3>HTML | CSS | JS</h3>
+                                <p>
+                                    Tenho conhecimento dessas 3 linguagens, para desenvolver inúmeros projetos, de uma simples Landing Page até um E-commerce.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-content">
+                                <img src="assets/img/mysql.png" alt="sql-logo">
+                            </div>
+                            <div class="text-content">
+                                <h3>MySql</h3>
+                                <p>Tenho expériencia profissional com banco de dados, desenvolvi relatórios utlizando a linguagem SQL, e apliquei eles ao sistema que a empresa utilizava</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-content">
+                                <img src="assets/img/git-logo.png" alt="git-logo">
+                            </div>
+                            <div class="text-content">
+                                <h3>Git & GitHub</h3>
+                                <p>Conhecimento semântico em GIT, possuo um certificado de realização do curso de GIT e GitHub</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-content">
+                                <img src="assets/img/node.png" alt="git-logo">
+                            </div>
+                            <div class="text-content">
+                                <h3>Node.js</h3>
+                                <p>Conhecimento da semantica assicrôna do node.js, alguns projetos feitos utilizando o framework Express, já utilizei o môdulo do handlebars para padronização de layout </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" id="projects">
+                    <div class="emBreve">
+                        <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <p>Não há projetos disponiveis para acesso, em breve isso mudará.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" id="projects">
+                    <div class="emBreve">
+                        <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <p>Não há projetos disponiveis para acesso, em breve isso mudará.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            allowTouchMove: true, // Permitir o arrasto por toque
+            on: {
+                slideChange: function () {
+                    setTimeout(function() {
+                        updateActiveLink(swiper.realIndex); 
+                    }, 10);  
+                },
+            }
+        });
+    
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const slideIndex = this.getAttribute('data-slide');
+                swiper.slideToLoop(parseInt(slideIndex)); 
+            });
+        });
+    
+        function updateActiveLink(index) {
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('ativo');
+            });
+    
+            const activeLink = document.querySelector(`.nav-links a[data-slide="${index}"]`);
+            if (activeLink) {
+                activeLink.classList.add('ativo');
+            }
+        }
+    </script>
+</body>
+</html>
