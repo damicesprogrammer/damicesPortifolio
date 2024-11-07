@@ -195,9 +195,6 @@ html{
     height: 370px;
     transition: 0.3s ease-in-out;
 }
-#experience .card:hover{
-    transform: translateY(-1px)
-}
 #experience .card .img-content    {
     width: 100%;
     display: flex;
@@ -240,6 +237,75 @@ html{
 .emBreve .icon i{
     font-size: 2rem;
 }
+.contact-box{
+    display: flex;
+    flex-direction: column;
+    padding-left: .6rem;
+    
+    align-items: start;
+}
+.contact-box h2{
+    padding: 2rem 0;
+}
+.contact-box .info-contact{
+    width: 100%;
+}
+.contact-box .info-contact ul{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.contact-box .info-contact #email{
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.contact-box .info-contact #email p{
+    color: rgba(0, 0, 255, 0.573);
+    text-decoration: underline;
+}
+.info-contact #email .icons{
+    background-color: red;
+    display: block;
+    position: relative;
+}
+.info-contact .icons i{
+    position: absolute;
+    transform: translateY(-50%);
+    /* display: block; */
+    /* background-color: red; */
+}
+#email .hidden{
+    visibility: hidden;
+}
+.copied{
+    color: green;
+}
+.contact-box .social-medias{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+}
+.contact-box .social-medias li{
+    margin-bottom: .2rem;
+    padding: .3rem .5rem;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+}
+.contact-box .social-medias li:hover{
+    background-color: rgba(180,180,180, .3);
+}
+
+
+
+
 .swiper-button-next,
 .swiper-button-prev{
     color: transparent;
